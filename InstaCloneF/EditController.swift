@@ -26,6 +26,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func tapImage(){
+        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
@@ -42,6 +43,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func back(_ sender: Any) {
         
+        
         userLabel.text = ""
         editImage.image = UIImage(named: "select")
         performSegue(withIdentifier: "goProfile", sender: nil)
@@ -49,6 +51,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @IBAction func save(_ sender: Any) {
+        
         
         let storage = Storage.storage()
         let storageRef = storage.reference()

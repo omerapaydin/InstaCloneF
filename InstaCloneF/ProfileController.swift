@@ -26,6 +26,7 @@ class ProfileController: UIViewController {
     
     func getData(){
         
+        
         let database = Firestore.firestore()
         
         database.collection("Users").order(by: "date").addSnapshotListener { (snapshot, error) in
@@ -48,6 +49,7 @@ class ProfileController: UIViewController {
                 
                 
                 
+                
             }else {
                 self.imageView.image = UIImage(named: "select")
                 self.userText.text = "@..."
@@ -63,6 +65,7 @@ class ProfileController: UIViewController {
     
    
     @IBAction func signOut(_ sender: Any) {
+        
         
         do {
             

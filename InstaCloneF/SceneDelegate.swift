@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         
+        
         let currentUser = Auth.auth().currentUser
         
         if currentUser != nil {
@@ -28,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let tabBar = board.instantiateViewController(identifier: "tabBar") as! UITabBarController
             
             window?.rootViewController = tabBar
+            
             
         }
         

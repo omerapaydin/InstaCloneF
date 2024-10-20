@@ -37,6 +37,7 @@ class HomeController: UIViewController , UITableViewDelegate , UITableViewDataSo
     
     func getData(){
         
+        
         let database = Firestore.firestore()
         
         database.collection("Posts").order(by: "date").addSnapshotListener { (snapshot, error) in
@@ -46,6 +47,7 @@ class HomeController: UIViewController , UITableViewDelegate , UITableViewDataSo
             }else{
                 
                 if snapshot?.isEmpty != true && snapshot != nil{
+                    
                     
                     self.userImageArray.removeAll(keepingCapacity: false)
                     self.userEmailArray.removeAll(keepingCapacity: false)
@@ -66,6 +68,7 @@ class HomeController: UIViewController , UITableViewDelegate , UITableViewDataSo
                         if let comment = document.get("comment") as? String{
                             self.userCommentArray.append(comment)
                         }
+                        
                         
                         if let like = document.get("like") as? Int{
                             self.likeArray.append(like)
@@ -88,11 +91,13 @@ class HomeController: UIViewController , UITableViewDelegate , UITableViewDataSo
             
         }
         
+        
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userEmailArray.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

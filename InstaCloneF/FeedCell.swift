@@ -24,6 +24,7 @@ class FeedCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
 
         heartImage.isUserInteractionEnabled = true
@@ -36,9 +37,11 @@ class FeedCell: UITableViewCell {
     
     
     @objc func handleTap(){
+        
         let fireStoreDatabase = Firestore.firestore()
         
         if let likeCount = Int(likeCell.text!){
+            
             
             
             let likeStore = ["like": likeCount + 1] as [String : Any]

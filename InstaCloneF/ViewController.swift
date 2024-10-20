@@ -43,6 +43,7 @@ class ViewController: UIViewController {
        
        @IBAction func signUp(_ sender: Any) {
            
+           
            if emailText.text != "" && passwordText.text != "" {
                    
                Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!) {(authdata, error) in
@@ -52,6 +53,7 @@ class ViewController: UIViewController {
                    } else {
 
                        self.performSegue(withIdentifier: "goTo", sender: nil)
+                       
                        
                    }
                    

@@ -24,6 +24,7 @@ class UploadController: UIViewController, UIImagePickerControllerDelegate, UINav
         imageView.addGestureRecognizer(tapGesture)
         
         
+        
     }
     func makeAlert(titleInput:String , messageInput: String){
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
@@ -38,6 +39,7 @@ class UploadController: UIViewController, UIImagePickerControllerDelegate, UINav
         picker.sourceType = .photoLibrary
         picker.allowsEditing = true
         present(picker, animated: true)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -47,6 +49,7 @@ class UploadController: UIViewController, UIImagePickerControllerDelegate, UINav
     
 
     @IBAction func save(_ sender: Any) {
+        
         
         let storage = Storage.storage()
         
