@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -168,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="2252.6717557251909" y="3.5211267605633805"/>
         </scene>
-        <!--Profile-->
+        <!--Profile Controller-->
         <scene sceneID="BRw-af-X9X">
             <objects>
                 <viewController id="BlC-t7-jpx" customClass="ProfileController" customModule="InstaCloneF" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,14 +177,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="NAN-so-YeN">
-                                <rect key="frame" x="114" y="166" width="165" height="165"/>
+                                <rect key="frame" x="114" y="210" width="165" height="165"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="QRE-7r-DhU"/>
                                     <constraint firstAttribute="width" constant="165" id="u0G-9l-55h"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyd-1l-ma3">
-                                <rect key="frame" x="46" y="368" width="301" height="31.333333333333314"/>
+                                <rect key="frame" x="46" y="412" width="301" height="31.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -214,7 +214,7 @@
                                 <rect key="frame" x="242" y="506" width="105" height="62"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="SignOut"/>
+                                <buttonConfiguration key="configuration" style="filled" title="LogOut"/>
                                 <connections>
                                     <action selector="signOut:" destination="BlC-t7-jpx" eventType="touchUpInside" id="Ax4-TP-TGF"/>
                                 </connections>
@@ -238,7 +238,6 @@
                             <constraint firstItem="fyd-1l-ma3" firstAttribute="trailing" secondItem="fcP-UE-ceJ" secondAttribute="trailing" id="xmc-qt-acc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="UhX-0H-ID3"/>
                     <navigationItem key="navigationItem" id="PMs-QI-MVt"/>
                     <connections>
                         <outlet property="imageView" destination="NAN-so-YeN" id="e7D-sR-bcI"/>
@@ -249,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2d-Y9-WyL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583.9694656488548" y="709.85915492957747"/>
+            <point key="canvasLocation" x="2510.6870229007632" y="709.85915492957747"/>
         </scene>
         <!--Edit Controller-->
         <scene sceneID="fta-Ho-RC5">
@@ -287,7 +286,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
                                     <action selector="back:" destination="tD2-tk-kUB" eventType="touchUpInside" id="hxf-Ty-dZl"/>
-                                    <segue destination="BlC-t7-jpx" kind="presentation" identifier="goProfile" modalPresentationStyle="fullScreen" id="F5l-uu-nDQ"/>
+                                    <segue destination="TiO-BL-fRe" kind="presentation" identifier="goProfile" modalPresentationStyle="fullScreen" id="F5l-uu-nDQ"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-PB-udf">
@@ -327,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw3-fN-kX0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472.5190839694656" y="709.85915492957747"/>
+            <point key="canvasLocation" x="3399.2366412213737" y="709.85915492957747"/>
         </scene>
         <!--Home-->
         <scene sceneID="WCr-Rd-d23">
@@ -465,12 +464,31 @@
                     <connections>
                         <segue destination="aYv-Am-ZjB" kind="relationship" relationship="viewControllers" id="aJX-3A-FTp"/>
                         <segue destination="VZR-I5-O0B" kind="relationship" relationship="viewControllers" id="Z83-1N-RKh"/>
-                        <segue destination="BlC-t7-jpx" kind="relationship" relationship="viewControllers" id="ggK-fW-VFb"/>
+                        <segue destination="TiO-BL-fRe" kind="relationship" relationship="viewControllers" id="ggK-fW-VFb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xI-eV-UmL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840" y="2"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="ZYS-Ln-OUu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TiO-BL-fRe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="UhX-0H-ID3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1bf-Px-myf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BlC-t7-jpx" kind="relationship" relationship="rootViewController" id="v8Q-Np-gEs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHh-Qk-gHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583.9694656488548" y="709.85915492957747"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -488,10 +506,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
